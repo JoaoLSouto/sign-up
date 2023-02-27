@@ -4,8 +4,8 @@ const Login = () => {
     return(
         <>
         <h1>Login</h1>
-        <Link to="/home">Voltar para Home</Link>
+        <Link to="/">Voltar para Home</Link>
         </>
     );        
 };
-export {Login} 
+export { Login } ;
