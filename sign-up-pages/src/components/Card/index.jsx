@@ -39,3 +39,5 @@ const Card = () => {
         </CardContainer>
     )
 }
+
+export { Card }
