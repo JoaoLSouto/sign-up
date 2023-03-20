@@ -13,10 +13,10 @@ import {
 const Card = () => {
     return (
         <CardContainer>
-          <ImageBackground />
+          <ImageBackground src="https://media.licdn.com/dms/image/C4D16AQF0MkH-4aifAg/profile-displaybackgroundimage-shrink_200_800/0/1638381800387?e=2147483647&v=beta&t=iaaY50O0mgDBNkbaRL8zBMNceYSo6H-u0aqJP4g8cn8"/>
           <Content>
             <UserInfo>
-              <UserPicture />
+            <UserPicture src="https://avatars.githubusercontent.com/u/98335519?v=4"/>
               <div>
                 <h4>
                   João Lucas
@@ -25,11 +25,11 @@ const Card = () => {
               </div>
             </UserInfo>
             <PostInfo>
-              <h4>Projeto para curso de HTML e CSS</h4>
-              <p>Projeto feito o curso de html e css no bootcamp <strong>Saiba Mais</strong></p>
+              <h4>Projeto para curso de formação em React</h4>
+              <p>Projeto feito o curso de React na DIO <strong>Saiba Mais</strong></p>
             </PostInfo>
             <HasInfo>
-              <h4> #HTML #CSS #JAVASCRIPT</h4>
+              <h4> #REACT #CSS #JAVASCRIPT</h4>
               <p>
                 <FiThumbsUp />10
               </p>

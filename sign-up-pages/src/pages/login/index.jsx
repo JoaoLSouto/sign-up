@@ -10,7 +10,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleClickSignIn = () => {
-        navigate('/login')
+        navigate('/feed')
     }
 
     return (<>
@@ -27,7 +27,7 @@ const Login = () => {
                 <form>
                     <Input placeholder="E-mail"/>
                     <Input placeholder="Senha" type="password"/>
-                    <Button title="Entrar" varian="secondary"></Button>
+                    <Button title="Entrar" varian="secondary" onClick={handleClickSignIn} type="button"></Button>
                 </form>
                 <Row>
                     <EsqueciText>Esqueci minha senha</EsqueciText>
