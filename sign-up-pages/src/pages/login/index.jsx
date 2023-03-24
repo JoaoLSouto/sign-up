@@ -4,6 +4,8 @@ import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 
+import { api } from '../../services/api'
+
 import { MdEmail, MdLock } from 'react-icons/md'
 
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -19,14 +21,20 @@ const schema = yup.object({
 const Login = () => {
 
     const navigate = useNavigate();
-    const { control, register, handleSubmit, watch, formState: { errors, isValid } } = useForm({
+    const { control, register, handleSubmit, watch, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         mode: 'onChange'
     });
 
     console.log(errors)
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = data =>{
+        try {
+            const {} = api.get(`users?email=${formData.email}&senha=${formData.senha} `)
+        }catch{
+            alert('houve um erro!')
+        }
+    }
 
     return (<>
         <Header />
