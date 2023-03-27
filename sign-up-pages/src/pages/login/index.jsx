@@ -28,7 +28,7 @@ const Login = () => {
 
     console.log(errors)
 
-    const onSubmit = data =>{
+    const onSubmit = data => {
         try {
             const {} = api.get(`users?email=${formData.email}&senha=${formData.senha} `)
         }catch{
