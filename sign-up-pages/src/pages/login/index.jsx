@@ -21,16 +21,23 @@ const Login = () => {
 
     const navigate = useNavigate()
 
-    const { control, register, handleSubmit, watch, formState: { errors, isValid } } = useForm({
+    const { control, handleSubmit, formState: { errors, } } = useForm({
         resolver: yupResolver(schema),
         mode: 'onChange',
     });
-    const onSubmit = data => console.log(data);
-    console.log('errors', errors);
 
-    const handleClickSignIn = () => {
-        navigate('/feed')
-    }
+    const onSubmit = async formData => {
+        try {
+            const{ data } = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
+            if (data.length === 1) {
+                navigate('/feed');
+            } else {
+                alert('Email ou senha inválido');
+            }
+        } catch {
+            alert('Houve um erro, tente novamente');
+        }
+    };
 
     return (<>
         <Header />
@@ -44,8 +51,8 @@ const Login = () => {
                 <TitleLogin>Faça seu cadastro</TitleLogin>
                 <SubtitleLogin>Faça seu login e make the change.</SubtitleLogin>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <Input  name="email" control={control} placeholder="E-mail" errorMessage={errors?.email?.message} leftIcon={<MdEmail />} name="email" />
-                    <Input  name="password" control={control} type="password" placeholder="Senha" errorMessage={errors?.password?.message} leftIcon={<MdLock />}  name="senha"/>
+                    <Input  name="email" control={control} placeholder="E-mail" errorMessage={errors?.email?.message} leftIcon={<MdEmail />}  />
+                    <Input  name="password" control={control} type="password" placeholder="Senha" errorMessage={errors?.password?.message} leftIcon={<MdLock />} />
                     
                     <Button title="Entrar" variant="secondary" type="submit"/>
                 </form>
