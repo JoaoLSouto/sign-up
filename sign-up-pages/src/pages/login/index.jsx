@@ -20,7 +20,9 @@ const schema = yup.object({
 const Login = () => {
 
     const navigate = useNavigate()
-
+    const handleClickCadastro = () => {
+        navigate('/cadastro')
+    }
     const { control, handleSubmit, formState: { errors, } } = useForm({
         resolver: yupResolver(schema),
         mode: 'onChange',
@@ -58,7 +60,7 @@ const Login = () => {
                 </form>
                 <Row>
                     <EsqueciText>Esqueci minha senha</EsqueciText>
-                    <CriarText>Criar Conta</CriarText>
+                    <CriarText onClick={handleClickCadastro}>Criar Conta</CriarText>
                 </Row>
                 </Wrapper>
             </Column>
